@@ -1,0 +1,13 @@
+body{
+    background-image: url("background.jpg");
+    	background-repeat: no-repeat;
+    background-size: cover;
+    	background-attachment: fixed;
+}
+#Table{
+    background-color:aliceblue;
+    position: absolute;
+    height: 90%;
+    width: 60%;
+    left: 20%;
+}

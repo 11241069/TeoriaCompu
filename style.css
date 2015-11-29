@@ -1,0 +1,21 @@
+#topDiv{
+    position:absolute;
+    height: 20%;
+    background-color: #4F70CC;
+}
+#leftDiv{
+    position:absolute;
+    height: auto;
+    top:20%;
+    background-color: #FFD2BB;
+    
+}
+#rightDiv{
+    position: absolute;
+    min-height:  113%;
+    max-height: auto;
+    top:20%;
+    left: 25%;
+    background-color: #878C99;
+    
+}
