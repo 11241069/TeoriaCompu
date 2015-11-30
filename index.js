@@ -21,8 +21,8 @@ $(document).ready(function(){
 		chars=chars.concat(temp);
 		var jsonRectangles=[];
 		var jsonTexts=[];
-		d3.select("#rightDiv").html("");
-		var svgContainer = d3.select("#rightDiv").append("svg").attr("width", 600).attr("height", 600);
+		d3.select("#CadenaDiv").html("");
+		var svgContainer = d3.select("#CadenaDiv").append("svg").attr("width", 600).attr("height", 600);
 
 		for(var idx=0;idx<chars.length;idx++){
 			var val=chars[idx];

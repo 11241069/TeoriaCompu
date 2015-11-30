@@ -16,53 +16,78 @@
         <script src="mainController.js"></script>
         <script src="./d3/d3.min.js"></script>
     </head>
-    <body>
-      <div class="row">
-        <div id="topDiv"class="col s12">
-          <h3 class="center-align grey-text text-lighten-1">Maquina de Turing</h3>
-        </div>
-        <div id="leftDiv"class="col s3">
-          <h5 class="center-align">Inputs</h5>
-          <div class="input-field col s12">
-          <input id="QEstados" type="text">
-          <label for="QEstados">Q</label>
-        </div>
-        <div class="input-field col s12">
-          <input id="QSigma" type="text">
-          <label for="QSigma">Σ</label>
-        </div>
-        <div class="input-field col s12">
-          <input id="QCinta" type="text">
-          <label for="QCinta">Γ</label>
-        </div>
-        <div class="input-field col s12">
-          <input id="QS" type="text">
-          <label for="QS">δ</label>
-        </div>
-        <div class="input-field col s12">
-          <input id="QInicial" type="text">
-          <label for="QInicial">Q0</label>
-        </div>
-        <div class="input-field col s12">
-          <input id="QAceptado" type="text">
-          <label for="QAceptado">QA</label>
-        </div>
-        <div class="input-field col s12">
-          <input id="QRechazado" type="text">
-          <label for="QRechazado">QR</label>
-        </div>
-        <div class="input-field col s12">
-          <input id="cadena" type="text">
-          <label for="cadena">Cadena</label>
-        </div>
-        <div class="col s12 center-align">
-            <button id="go" class="btn-large waves-effect waves-light green darken-1">Go!</button>
-        </div>
-      </div>
-      <div id="rightDiv"class="col s9">
-          <svg width="400" height="110">
-          </svg>
-      </div>
-      <script src="index.js"></script>   
-  </body>
+    <style>
+        input{
+        color: black !important;
+        }
+    </style>
+    <body>        
+            <div class="row">
+                <div id="topDiv"class="col s12">
+                
+                    <h3 class="center-align grey-text text-lighten-1">Maquina de Turing</h3>
+            
+                </div>
+                <div id="leftDiv"class="col s3">
+                    <h5 class="center-align">Inputs</h5>
+                    <div class="input-field col s12">
+                        <input disabled placeholder="Placeholder" id="QEstados" type="text"value="Q0,Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8,Q9">
+                        <label for="QEstados">Q</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input disabled placeholder="Placeholder" id="QSigma" type="text"value="{0,1,2}">
+                        <label for="QSigma">Σ</label>
+                    </div>
+                    <div class="input-field col s12">
+                      <input disabled placeholder="Placeholder" id="QCinta" type="text"value="{0,1,2,#,X,Y}">
+                      <label for="QCinta">Γ</label>
+                    </div>
+                    <div class="input-field col s12">
+                      <input disabled id="QS" type="text">
+                      <label for="QS">δ</label>
+                    </div>
+                    <div class="input-field col s12">
+                      <input disabled placeholder="Placeholder" id="QInicial" type="text" value ="Q0">
+                      <label for="QInicial">Q0</label>
+                    </div>
+                    <div class="input-field col s12">
+                      <input disabled placeholder="Placeholder" id="QAceptado" type="text"value="Q9">
+                      <label for="QAceptado">QA</label>
+                    </div>
+                    <div class="input-field col s12">
+                      <input disabled placeholder="Placeholder" id="QRechazado" type="text" value="Q5">
+                      <label for="QRechazado">QR</label>
+                    </div>
+                    <div class="input-field col s12">
+                      <input id="cadena" type="text">
+                      <label for="cadena">Cadena</label>
+                    </div>
+                    <div class="col s12 center-align">
+                    <button id="go" class="btn-large waves-effect waves-light green darken-1">Go!</button>
+                </div>
+                
+                </div>
+                <div id="rightDiv"class="col s9">
+                    
+                    <div class="col s12" id="Automatadiv">
+                    <img src="automata.png" alt="WW Automata" id="Automata">
+                    </div>
+                    <div class="col s12"id="CadenaDiv">    
+                    <svg width="400" height="110"> 
+                    </svg>
+                    </div>
+                    <div class="col s12"id="backnext">
+                    <div class="col s6 center-align" id="next">
+                    <button class="btn-large waves-effect waves-light green darken-1">next</button>    
+                    </div>
+                    <div class="col s6 center-align" id="back">
+                    <button class="btn-large waves-effect waves-light green darken-1">Back</button>
+                    </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        <script src="index.js"></script>  
+    </body>
 </html>

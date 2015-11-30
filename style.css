@@ -1,21 +1,40 @@
 #topDiv{
     position:absolute;
-    height: 20%;
+    height: 15%;
     background-color: #4F70CC;
 }
 #leftDiv{
     position:absolute;
     height: auto;
-    top:20%;
+    top:15%;
     background-color: #FAFAFA;
     
 }
 #rightDiv{
     position: absolute;
-    min-height:  113%;
+    min-height:  115%;
     max-height: auto;
-    top:20%;
+    top:15%;
     left: 25%;
     background-color: #BEBEBE;
     
 }
+#Automata{
+    position: absolute;
+    top:3%;
+    left: 25%;
+    right: 25%;
+    width:50%;
+    height:50%;
+}
+#CadenaDiv{
+    position: absolute;
+    /*left:45%;*/
+    top:60%;
+}
+#backnext{
+    position: absolute;
+    top:80%;
+
+}
+  
