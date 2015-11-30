@@ -1,12 +1,12 @@
 #topDiv{
     position:absolute;
-    height: 20%;
+    height: 15%;
     background-color: #4F70CC;
 }
 #leftDiv{
     position:absolute;
     height: auto;
-    top:20%;
+    top:15%;
     background-color: #FFD2BB;
     
 }
@@ -14,8 +14,16 @@
     position: absolute;
     min-height:  113%;
     max-height: auto;
-    top:20%;
+    top:15%;
     left: 25%;
     background-color: #878C99;
     
+}
+#Automata{
+    position: absolute;
+    top:3%;
+    left: 25%;
+    right: 25%;
+    width:50%;
+    height:50%;
 }
