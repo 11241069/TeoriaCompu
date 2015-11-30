@@ -3,7 +3,6 @@ angular.module('myApp').controller('mainController', ['$scope', '$log','$http','
     var ctrl = this;
     
     ctrl.init = function(){
-        
     };
     
     

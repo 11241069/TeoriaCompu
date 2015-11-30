@@ -7,7 +7,7 @@
     position:absolute;
     height: auto;
     top:20%;
-    background-color: #FFD2BB;
+    background-color: #FAFAFA;
     
 }
 #rightDiv{
@@ -16,6 +16,6 @@
     max-height: auto;
     top:20%;
     left: 25%;
-    background-color: #878C99;
+    background-color: #BEBEBE;
     
 }
