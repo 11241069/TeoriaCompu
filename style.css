@@ -12,7 +12,7 @@
 }
 #rightDiv{
     position: absolute;
-    min-height:  115%;
+    height:  85%;
     max-height: auto;
     top:15%;
     left: 25%;
@@ -37,4 +37,7 @@
     top:80%;
 
 }
-  
+.action-button{
+    margin-right: 20px;
+    margin-left: 50px;
+}

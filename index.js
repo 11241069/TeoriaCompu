@@ -59,8 +59,8 @@ $(document).ready(function(){
 
 	function delta(estado,elementoCinta){
 		var retVal={};
-		console.log("estado: ",estado);
-		console.log("símbolo: ",elementoCinta);
+		//console.log("estado: ",estado);
+		//console.log("símbolo: ",elementoCinta);
 		retVal=automata[estado][elementoCinta];
 		//console.log("Escribe",retVal[0]);
 		//console.log("Direccion",retVal[1]);
@@ -68,25 +68,31 @@ $(document).ready(function(){
 		return retVal;
 	}
 	function buscar(){
+		$("#nextButton").removeAttr("disabled");
+		$("#play").removeAttr("disabled");
 		position=0;
 		estadoActual="q0";
 		cadenaManejada=$("#cadena").val()
 		drawBoxes(cadenaManejada,position);
 	}
 	function siguiente(){
-		resDelta=delta(estadoActual,cadenaManejada.split("")[position]==undefined?" ":cadenaManejada.split("")[position]);
+		var caracterLeido=cadenaManejada.split("")[position]==undefined?" ":cadenaManejada.split("")[position];
+		resDelta=delta(estadoActual,caracterLeido);
 		if(resDelta==undefined){
-			alert("Cadena no aceptada");
+			toastr.error("Ciclo alcanzado");
+			$("#nextButton").attr("disabled","disabled");
 			buscar();
-			return;
+			return false;
 		}
 		var aEscribir=resDelta[0];
 		var direccion=resDelta[1];
 		var siguienteEstado=resDelta[2];
+		$("#QS").val("("+estadoActual+","+caracterLeido+")"+"→"+"("+siguienteEstado+","+aEscribir+","+direccion+")");
 		if(siguienteEstado=="q9"){
-			alert("Cadena aceptada");
+			toastr.success("Cadena aceptada");
+			$("#nextButton").attr("disabled","disabled");
 			buscar();
-			return;
+			return false;
 		}
 		var temp=cadenaManejada.split("");
 		temp[position]=aEscribir;
@@ -94,9 +100,19 @@ $(document).ready(function(){
 		position=direccion=="R"?position+1:position-1;
 		estadoActual=siguienteEstado;
 		drawBoxes(cadenaManejada,position);
+		return true;
 	}
-	function direccion(){
-
+	function play(){
+		var hasNext=true;
+		$("#play").attr("disabled","disabled");
+		setTimeout(function() {
+			hasNext=siguiente();
+			if(hasNext){
+				return play();
+			}else{
+				$("#play").removeAttr("disabled");
+			}
+		}, 400);
 	}
 	
 	function drawBoxes(cadena,positionMark){
@@ -113,7 +129,7 @@ $(document).ready(function(){
 		var jsonRectangles=[];
 		var jsonTexts=[];
 		d3.select("#CadenaDiv").html("");
-		var svgContainer = d3.select("#CadenaDiv").append("svg").attr("width", "100%").attr("height", 600);
+		var svgContainer = d3.select("#CadenaDiv").append("svg").attr("width", "100%").attr("height", 100);
 
 		for(var idx=0;idx<chars.length;idx++){
 			var val=chars[idx];
@@ -167,9 +183,11 @@ $(document).ready(function(){
 
 	function init(){
 		$("#go").bind("click",buscar);
+		$("#play").bind("click",play);
 		$("#cadena").keyup(function(event){
 			var cadena=$("#cadena").val();
-			drawBoxes(cadena);
+			var regex=/^[0-2]+$/;
+			drawBoxes(cadena);		
 		});
 		$("#nextButton").bind("click",siguiente);
 	};

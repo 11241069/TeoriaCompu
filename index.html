@@ -6,12 +6,14 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
         <link href="style.css" rel="stylesheet">
+        <link href="./JS/toastr.min.css"rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="./JS/jquery-1.9.1.min.js"></script>
         <script src="./JS/angular.min.js"></script> 
         <script src="./JS/angular-route.min.js"></script>
         <script src="./JS/materialize/js/materialize.min.js"></script>
         <script src="./JS/angular-route.min.js"></script>
+        <script src="./JS/toastr.min.js"></script>
         <script src="app.js"></script>
         <script src="mainController.js"></script>
         <script src="./d3/d3.min.js"></script>
@@ -59,7 +61,7 @@
                       <label for="QRechazado">QR</label>
                     </div>
                     <div class="input-field col s12">
-                      <input id="cadena" type="text">
+                      <input id="cadena" type="text" pattern="/^[0-2]+$/">
                       <label for="cadena">Cadena</label>
                     </div>
                     <div class="col s12 center-align">
@@ -80,9 +82,8 @@
                         <!--<div class="col s6 center-align" id="back">
                             <button id="backButton" class="btn-large waves-effect waves-light green darken-1">Back</button>
                         </div>-->
-                        <div class="col s6 center-align" id="next">
-                            <button id="nextButton" class="btn-large waves-effect waves-light green darken-1">next</button>    
-                        </div>
+                            <button id="play" class="btn-large waves-effect waves-light green darken-1 action-button" disabled="disabled">►</button>    
+                            <button id="nextButton" class="btn-large waves-effect waves-light green darken-1 action-button" disabled="disabled">next</button>
                     </div>
                     
                     
