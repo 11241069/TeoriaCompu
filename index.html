@@ -14,6 +14,7 @@
         <script src="./JS/materialize/js/materialize.min.js"></script>
         <script src="./JS/angular-route.min.js"></script>
         <script src="./JS/toastr.min.js"></script>
+        <script src="./JS/fsm.js"></script>
         <script src="app.js"></script>
         <script src="mainController.js"></script>
         <script src="./d3/d3.min.js"></script>
@@ -72,7 +73,8 @@
                 <div id="rightDiv"class="col s9">
                     
                     <div class="col s12" id="Automatadiv">
-                    <img src="automata.png" alt="WW Automata" id="Automata">
+                    <!--<img src="automata.png" alt="WW Automata" id="Automata">-->
+                    <canvas id="canvas" width="950" height="550"></canvas>
                     </div>
                     <div class="col s12"id="CadenaDiv">    
                     <svg width="400" height="110"> 
@@ -90,5 +92,6 @@
                 </div>
             </div>
         <script src="index.js"></script>  
+        
     </body>
 </html>

@@ -12,7 +12,6 @@
 }
 #rightDiv{
     position: absolute;
-    height:  85%;
     max-height: auto;
     top:15%;
     left: 25%;
@@ -27,17 +26,13 @@
     width:50%;
     height:50%;
 }
-#CadenaDiv{
-    position: absolute;
-    /*left:45%;*/
-    top:60%;
-}
 #backnext{
-    position: absolute;
-    top:80%;
-
+    margin-bottom:10%;
 }
 .action-button{
     margin-right: 20px;
     margin-left: 50px;
+}
+#canvas{
+    background-color: white;
 }
