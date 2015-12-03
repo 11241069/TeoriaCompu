@@ -79,7 +79,7 @@ $(document).ready(function(){
 		var caracterLeido=cadenaManejada.split("")[position]==undefined?" ":cadenaManejada.split("")[position];
 		resDelta=delta(estadoActual,caracterLeido);
 		if(resDelta==undefined){
-			toastr.error("Ciclo alcanzado");
+			toastr.error("Cadena Rechazada");
 			$("#nextButton").attr("disabled","disabled");
 			buscar();
 			return false;
